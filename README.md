@@ -32,8 +32,14 @@ Notas:
 
 
 Database: ChallengeGC
+
 ConString: "Server=(localdb)\\mssqllocaldb;Database=ChallengeGC;Trusted_Connection=True;MultipleActiveResultSets=true"
+
 script creacion: Usuarios.sql
+
+script de llenado datos: dbo.Usuario.data.sql
+
+
 
 
 
