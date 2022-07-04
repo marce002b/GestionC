@@ -109,11 +109,13 @@ Se crea una clase llamada Festivos con los datos provenientes del json de respue
 
 se usa el metodo get del HttpMethod pq es un ejemplo de api minima sin :ControllerBase
 
-En un primer controller FestivosEndpointsClass usamos API minimal para devolver los festivos por codigo de pais, solo para los permitidos  "AR", "CO", "CL" filtrados en una expresion lambda.
+En un primer EJERCICIO una clase similar a un controller FestivosEndpointsClass usamos API minimal para devolver los festivos por codigo de pais, solo para los permitidos  "AR", "CO", "CL" filtrados en una expresion lambda. solo se hizo para comparar el uso de api minimal no tener en cuenta demasiado.
+
+
 
 2) ENDPOINT FESTIVOS API NORMAL con controller 
 
-En un segundo  controller  Festivos2Controller.cs con inyeccion de dependencias: patron q permite registrar clases en un container que inyectara las dependencias y no usara instancias dentro de la clase ademas permitiremos devolver un unautorized: Se mostrara un 401 no autorizado cuando no sea el pais adecuado, ej BR , para lo cual se simpplifica devolviendo return Unauthorized();
+En un segundo EJERCICIO un controller  Festivos2Controller.cs con inyeccion de dependencias: patron q permite registrar clases en un container que inyectara las dependencias y no usara instancias dentro de la clase ademas permitiremos devolver un unautorized: Se mostrara un 401 no autorizado cuando no sea el pais adecuado, ej BR , para lo cual se simpplifica devolviendo return Unauthorized();
 
 aqui debemos crear una Interface IServicioFestivos que nos obliga a implementar en la clase el metodo como hilo de ejecucion task  BuscarDataFestivosAPIExterna , este es el que verdaderamente llamara a la api externa con el codigo de pais elegido como parametro y deserealizara en una lista de festivos...
 la registracion se hizo en program.cs mediante
@@ -121,6 +123,8 @@ builder.Services.AddTransient<IServicioFestivos, ServicioFestivos>();
 
 PARA USAR DI de Net 6.0: cuando se pida una instancia de IServicioFestivos se debe crear una instancia de ServicioFestivos 
  registramos el servicio por ej tipo transient en el container q es la IServicioFestivos , este tipo es transitorio y crea una instancia por cada invocacion al controlador y sus metodos.
+ 
+ 
 
 
 
