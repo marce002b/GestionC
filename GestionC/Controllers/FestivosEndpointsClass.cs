@@ -1,4 +1,4 @@
-﻿using GestionC;
+﻿using GestionC.Modelos;
 using System.Net;
 
 namespace GestionC.Controllers;

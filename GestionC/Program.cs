@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using GestionC.Data;
 using GestionC.Controllers;
+using GestionC.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<GestionCContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GestionCContext") ?? throw new InvalidOperationException("Connection string 'GestionCContext' not found.")));
@@ -13,8 +15,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//***cmj servicio p api minimal
+//***cmj registracion de servicio para api minimal
 builder.Services.AddHttpClient();
+
+//***cmj PARA USAR DI de Net 6.0: cuando se pida una instancia de IServicioFestivos se debe crear una instancia de ServicioFestivos 
+//***cmj registramos el servicio tipo transient en el container q es la IServicioFestivos 
+builder.Services.AddTransient<IServicioFestivos, ServicioFestivos>();
+
 
 var app = builder.Build();
 
@@ -31,6 +38,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+//***cmj operaciones a ejecutar por cada peticion (pipeline request)
 app.MapFestivosEndpoints();
 
 
