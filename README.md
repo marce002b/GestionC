@@ -44,7 +44,8 @@ Notas:
 
 # RESOLUCION INSTRUCCIONES BASICAS
 
-En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara .NET 6.0 y DI con swagger para probar la API. Creamos una carpeta MODELOS donde iran nuestras clases basicas usuario y festivos. 
+En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara .NET 6.0. Implementara Inyeccion de dependencias ID y  swagger para probar la API. 
+Creamos una carpeta MODELOS donde iran nuestras 2 clases basicas usuario y festivos. 
 
 
     public class Usuario
@@ -70,19 +71,18 @@ En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara .NET 6.0 y DI con
         //public int? launchYear { get; set; }
         //public List<string> types { get; set; }
     }
-Dentro del IDE de VS podemos:
+    
+Dentro del IDE de VS2022 podemos:
 
 CREAR Database: ChallengeGC
 
-script creacion tabla USUARIO: Usuarios.sql
+correr script creacion tabla USUARIO: Usuarios.sql
 
-script de llenado datos: dbo.Usuario.data.sql
+correr script de llenado datos: dbo.Usuario.data.sql
 
 finalmente nos queda en appsettings.json un ConString: "Server=(localdb)\\mssqllocaldb;Database=ChallengeGC;Trusted_Connection=True;MultipleActiveResultSets=true"
 
-Creamos una clase Usuario.cs que nos represente cada entidad con Id , Nombre , etc
-
-1) Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla dicha.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro cuando requiera y tb un bool para saber si el usuario existe:
+1) Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla usuario.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado por default y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro ID cuando requiera y tb un bool para saber si el usuario existe:  bool UsuarioExists(int id)
 
 Usuarios
 
