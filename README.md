@@ -103,7 +103,7 @@ DELETE
 ​/api​/Usuarios​/{id}
 
 
-2) ENDPOINT FESTIVOS API MINIMAL  sin derivar de ControllerBase
+1) API MINIMAL  ENDPOINT FESTIVOS sin derivar de ControllerBase
 
 Se crea una clase llamada Festivos con los datos provenientes del json de respuesta de la url provista. no se usara la clase completa sino 5 campos. se procede a anteponer @ ya q un campo se llama fixed palabra reservada. esta clase se usara para deserealizar los json de las respuestas GET del httpClient en una lista de festivos . 
 
@@ -113,7 +113,7 @@ En un primer EJERCICIO una clase similar a un controller FestivosEndpointsClass 
 
 
 
-2) ENDPOINT FESTIVOS API NORMAL con controller 
+2) API NORMAL con controller  ENDPOINT FESTIVOS 
 
 En un segundo EJERCICIO un controller  Festivos2Controller.cs con inyeccion de dependencias: patron q permite registrar clases en un container que inyectara las dependencias y no usara instancias dentro de la clase ademas permitiremos devolver un unautorized: Se mostrara un 401 no autorizado cuando no sea el pais adecuado, ej BR , para lo cual se simpplifica devolviendo return Unauthorized();
 
