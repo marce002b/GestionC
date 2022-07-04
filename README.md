@@ -82,7 +82,7 @@ correr script de llenado datos: dbo.Usuario.data.sql
 
 finalmente nos queda en appsettings.json un ConString: "Server=(localdb)\\mssqllocaldb;Database=ChallengeGC;Trusted_Connection=True;MultipleActiveResultSets=true"
 
-1) Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla usuario.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado por default y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro ID cuando requiera y tb un bool para saber si el usuario existe:  bool UsuarioExists(int id)
+1) ****Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla usuario.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado por default y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro ID cuando requiera y tb un bool para saber si el usuario existe:  bool UsuarioExists(int id)
 
 Usuarios
 
@@ -103,7 +103,7 @@ DELETE
 ​/api​/Usuarios​/{id}
 
 
-1) API MINIMAL  ENDPOINT FESTIVOS sin derivar de ControllerBase
+2) ****API MINIMAL  ENDPOINT FESTIVOS sin derivar de ControllerBase
 
 Se crea una clase llamada Festivos con los datos provenientes del json de respuesta de la url provista. no se usara la clase completa sino 5 campos. se procede a anteponer @ ya q un campo se llama fixed palabra reservada. esta clase se usara para deserealizar los json de las respuestas GET del httpClient en una lista de festivos . 
 
@@ -113,7 +113,7 @@ En un primer EJERCICIO una clase similar a un controller FestivosEndpointsClass 
 
 
 
-2) API NORMAL con controller  ENDPOINT FESTIVOS 
+3) ****API NORMAL con controller  ENDPOINT FESTIVOS 
 
 En un segundo EJERCICIO un controller  Festivos2Controller.cs con inyeccion de dependencias: patron q permite registrar clases en un container que inyectara las dependencias y no usara instancias dentro de la clase ademas permitiremos devolver un unautorized: Se mostrara un 401 no autorizado cuando no sea el pais adecuado, ej BR , para lo cual se simpplifica devolviendo return Unauthorized();
 
