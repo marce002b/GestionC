@@ -6,12 +6,14 @@ namespace GestionC.Controllers;
 public static class FestivosEndpointsClass 
 {
 
-
+    //api minimal
     public static void MapFestivosEndpoints(this IEndpointRouteBuilder routes)
     {
 
         routes.MapGet("Festivos", async (IHttpClientFactory httpClientFactory, string pais) =>
         {
+            
+            //***cmj filtramos los paises permitidos
             bool permitidos = new string[] { "AR", "CO", "CL" }.Any(s => pais.Contains(s));
             if (permitidos)
             {

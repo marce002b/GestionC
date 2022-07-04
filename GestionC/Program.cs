@@ -12,7 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//cmj
+
+//***cmj servicio p api minimal
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
@@ -31,9 +32,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapFestivosEndpoints();
-
-
-
 
 
 app.Run();
