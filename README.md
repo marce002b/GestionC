@@ -42,7 +42,7 @@ Notas:
 
 ❖ Proveer las instrucciones necesarias para la ejecución de la aplicación.
 
-# RESOLUCION
+# RESOLUCION INSTRUCCIONES BASICAS
 
 En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara ID y swagger para probar la API. Creamos una carpeta MODELOS donde iran nuestras clases basicas. Dentro del IDE de VS podemos:
 
@@ -56,7 +56,25 @@ finalmente nos queda en appsettings.json un ConString: "Server=(localdb)\\mssqll
 
 Creamos una clase Usuario.cs que nos represente cada entidad con Id , Nombre , etc
 
-Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla dicha.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado y el nombre del controller.
+Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla dicha.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro cuando requiera y tb un bool para saber si el usuario existe.
+
+Usuarios
+
+
+GET
+​/api​/Usuarios
+
+POST
+​/api​/Usuarios
+
+GET
+​/api​/Usuarios​/{id}
+
+PUT
+​/api​/Usuarios​/{id}
+
+DELETE
+​/api​/Usuarios​/{id}
 
 
 
