@@ -42,15 +42,30 @@ Notas:
 
 ❖ Proveer las instrucciones necesarias para la ejecución de la aplicación.
 
-# RESOLUC
+# RESOLUCION
 
-Database: ChallengeGC
+En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara ID y swagger para probar la API. Creamos una carpeta MODELOS donde iran nuestras clases basicas. Dentro del IDE de VS podemos:
 
-ConString: "Server=(localdb)\\mssqllocaldb;Database=ChallengeGC;Trusted_Connection=True;MultipleActiveResultSets=true"
+CREAR Database: ChallengeGC
 
-script creacion: Usuarios.sql
+script creacion tabla USUARIO: Usuarios.sql
 
 script de llenado datos: dbo.Usuario.data.sql
+
+finalmente nos queda en appsettings.json un ConString: "Server=(localdb)\\mssqllocaldb;Database=ChallengeGC;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+Creamos una clase Usuario.cs que nos represente cada entidad con Id , Nombre , etc
+
+Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla dicha.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado y el nombre del controller.
+
+
+
+
+
+
+
+
+
 
 
 
