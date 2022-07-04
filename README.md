@@ -47,8 +47,7 @@ Notas:
 En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara .NET 6.0 y DI con swagger para probar la API. Creamos una carpeta MODELOS donde iran nuestras clases basicas usuario y festivos. 
 
 
-
- public class Usuario
+    public class Usuario
     {
     public int Id { get; set; }
         public string Nombre { get; set; }
@@ -56,8 +55,8 @@ En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara .NET 6.0 y DI con
         public string Email { get; set; }
         public string Password { get; set; }
     }
-    
-    
+}
+
     
      public class Festivos
     {
