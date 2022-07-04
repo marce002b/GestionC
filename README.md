@@ -44,7 +44,30 @@ Notas:
 
 # RESOLUCION INSTRUCCIONES BASICAS
 
-En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara ID y swagger para probar la API. Creamos una carpeta MODELOS donde iran nuestras clases basicas. Dentro del IDE de VS podemos:
+En VS2022 se crea un proyecto tipo ASP NET CORE WEB API. Usara .NET 6.0 y DI con swagger para probar la API. Creamos una carpeta MODELOS donde iran nuestras clases basicas usuario y festivos. 
+
+ public class Usuario
+    {
+    public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+    
+     public class Festivos
+    {
+        public string date { get; set; }
+        public string localName { get; set; }
+        public string name { get; set; }
+        public string countryCode { get; set; }
+        public bool @fixed { get; set; }
+        //public bool global { get; set; }
+        //public object counties { get; set; }
+        //public int? launchYear { get; set; }
+        //public List<string> types { get; set; }
+    }
+Dentro del IDE de VS podemos:
 
 CREAR Database: ChallengeGC
 
@@ -84,6 +107,20 @@ Se crea una clase llamada Festivos con los datos provenientes del json de respue
 se usa el metodo get del HttpMethod pq es un ejemplo de api minima sin :ControllerBase
 
 En un primer controller FestivosEndpointsClass usamos API minimal para devolver los festivos por codigo de pais, solo para los permitidos  "AR", "CO", "CL" filtrados en una expresion lambda.
+
+2) ENDPOINT FESTIVOS API NORMAL con controller 
+
+En un segundo  controller  Festivos2Controller.cs con inyeccion de dependencias: patron q permite registrar clases en un container que inyectara las dependencias y no usara instancias dentro de la clase ademas permitiremos devolver un unautorized: Se mostrara un 401 no autorizado cuando no sea el pais adecuado, ej BR , para lo cual se simpplifica devolviendo return Unauthorized();
+
+aqui debemos crear una Interface IServicioFestivos que nos obliga a implementar en la clase el metodo como hilo de ejecucion task  BuscarDataFestivosAPIExterna , este es el que verdaderamente llamara a la api externa con el codigo de pais elegido como parametro y deserealizara en una lista de festivos...
+la registracion se hizo en program.cs mediante
+builder.Services.AddTransient<IServicioFestivos, ServicioFestivos>();
+
+PARA USAR DI de Net 6.0: cuando se pida una instancia de IServicioFestivos se debe crear una instancia de ServicioFestivos 
+ registramos el servicio por ej tipo transient en el container q es la IServicioFestivos , este tipo es transitorio y crea una instancia por cada invocacion al controlador y sus metodos.
+
+
+
 
 
 
