@@ -56,7 +56,7 @@ finalmente nos queda en appsettings.json un ConString: "Server=(localdb)\\mssqll
 
 Creamos una clase Usuario.cs que nos represente cada entidad con Id , Nombre , etc
 
-Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla dicha.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro cuando requiera y tb un bool para saber si el usuario existe:
+1) Agregamos un CONTROLLER API UsuariosController usando EFramework con CRUD, llamado UsuariosController que nos permitira generar las operaciones (rutas y metodos del controlador sobre la tabla dicha.) simplemente elegimos la clase origen que es usuario de nuestro modelo, el context que lo agregamos autonombrado y el nombre del controller. ya tendremos  las acciones get put post delete que soportan las operaciones CRUD, especificando parametro cuando requiera y tb un bool para saber si el usuario existe:
 
 Usuarios
 
@@ -77,7 +77,7 @@ DELETE
 ​/api​/Usuarios​/{id}
 
 
-ENDPOINT FESTIVOS API MINIMAL  sin derivar de ControllerBase
+2) ENDPOINT FESTIVOS API MINIMAL  sin derivar de ControllerBase
 
 Se crea una clase llamada Festivos con los datos provenientes del json de respuesta de la url provista. no se usara la clase completa sino 5 campos. se procede a anteponer @ ya q un campo se llama fixed palabra reservada. esta clase se usara para deserealizar los json de las respuestas GET del httpClient en una lista de festivos . 
 
