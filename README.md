@@ -29,3 +29,11 @@ Notas:
 ❖ Proveer el código fuente subiendo la solución a un repositorio de Github, Gitlab u otro.
 ❖ Proveer el Script para generar la Base de Datos y “popularla” con datos de prueba.
 ❖ Proveer las instrucciones necesarias para la ejecución de la aplicación.
+
+
+Database: ChallengeGC
+ConString: "Server=(localdb)\\mssqllocaldb;Database=ChallengeGC;Trusted_Connection=True;MultipleActiveResultSets=true"
+script creacion: Usuarios.sql
+
+
+
